@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>cafe penopo lawas</title>
+  </head>
+  <body>
+    <div class="badan utama">
+    <header>
+       <h2 style="text-align:center;">CAFE PENDOPO LAWAS</h2>
+    </header>
+      <style>
+        .badan-utama
+{
+  max-width: 1080px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 15px;
+    overflow: hidden;
+}
+header
+{
+    background-color: crimson;
+    color: white;
+    padding: 20px;
+}
+header
+{
+    background-color: crimson;
+    color: white;
+    padding: 20px;
+}
+ 
+header h2
+{
+    margin-bottom: 7px;
+    font-size: 35px;
+}
+ </style>
+ <br />
+ <table border="1" cellpadding="15" align="center" width= 600px>
+    <tr>
+        <td bgcolor="red">MAKANAN</td>
+        <td align="center" bgcolor="red">HARGA</td>
+      </tr>
+       <tr>
+           <td>Seafood Saus Padang</td>
+           <td>Rp. 250.000</td>
+       </tr>
+      <tr>
+        <td>Cumi Saus Tiram</td>
+        <td>Rp. 150.000</td>
+      </tr>
+      <tr>
+          <td>Ayam Sambal Matah</td>
+          <td>Rp. 50.000</td>
+      </tr>
+        <tr>
+           <td>Kerang Saus Tiram</td>
+           <td>Rp. 50.000</td>
+       </tr>
+          <tr>
+        <td bgcolor="red">MINUMAN</td>
+        <td align="center" bgcolor="red">HARGA</td>
+        </tr>
+          <tr>
+        <td>Es Campur</td>
+        <td>Rp. 15.000</td>
+        </tr>
+        <tr>
+           <td>moccachino</td>
+           <td>Rp. 25.000</td>
+        </tr>
+      <tr>
+          <td>Jus mangga</td>
+          <td> Rp. 25.000</td>
+      </tr>
+ </table>
+ <br />
+ <div class="menu-kiri">
+            <div class="kotak">
+                <h2 style="text-align:center;">Pemesanan</h2>
+                <p style="text-align:center;">
+                    Isi Form di bawah untuk melakukan pemesanan.
+                </p>
+                <style>
+                h2{
+                
+                  text-align: center;
+			text-decoration: underline;
+                }
+                </style>
+                
+	<script type="text/javascript">
+		function hitungtotal(){
+
+			var nama = (document.form.inama.value);
+			var menu= (document.form.imenu.value);
+			var jumlahpesan = parseFloat (document.form.ijumlah.value);
+			var h = 0.0 ;
+			var sub = 0.0;
+			var diskon = 0.0;
+			var total = 0.0;
+			if (menu == "Seafood saus padang") {
+
+				h = 250000;
+			}
+			else if(menu == "Cumi saus tiram")
+			{
+				h = 150000;
+			}
+			else if(menu == "Ayam sambal matah")
+			{
+			  h = 50000;
+			}
+			else if(menu == "Kerang saus tiram")
+			{
+			  h = 50000;
+			}
+			else if(menu == "Es campur")
+			{
+			  h = 15000;
+			}
+			else if(menu == "Moccachino")
+			{
+			  h = 25000;
+			}
+			else
+			{
+				h = 25000;
+			}
+
+			sub = jumlahpesan*h;
+
+			if (document.form.imamber.checked == true) 
+			{
+				diskon = 0.10 * sub;
+			}
+			else
+			{
+				diskon=0.0;
+			}
+			total = sub - diskon;
+			document.form.omenu.value=eval(h);
+			document.form.osub.value=eval(sub);
+			document.form.odiskon.value=eval(diskon);
+			document.form.ototal.value=eval(total);
+		}
+
+	</script>
+<form name="form" onchange="hitungtotal()">
+
+<table border="2" cellpadding="15" align="center" width= 600px>
+
+	<tr>
+		<td>Nama</td>
+		<td><input type="text" name="inama" size="25" placeholder="Nama Anda.."> </td>
+	</tr>		
+		<tr>
+			<td>
+				Menu
+			</td>
+			<td>
+				<select name="imenu">
+					<option value="Seafood saus padang">Seafood saus padang</option>
+					<option value="Cumi saus tiram">Cumi saus tiram</option>
+					<option value="Ayam sambal matah">Ayam sambal matah</option>
+					<option value="Kerang saus tiram">Candi Prambanan</option>
+					<option value="Es campur">Es campur</option>
+					<option value="Moccachino">Moccachino</option>
+					<option value="Jus mangga">Jus mangga</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Jumlah pesan
+			</td>
+			<td>
+				<input type="text" size="15" name="ijumlah" placeholder="Jumlah pesan Anda..">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Member
+			</td>
+			<td>
+				<input type="checkbox" name="imamber">Ya
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Harga 
+			</td>
+			<td>
+				<input type="text" size="10" name="omenu">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Sub Total
+			</td>
+			<td>
+				<input type="text" size="10" name="osub">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Diskon
+			</td>
+			<td>
+				<input type="text" size="10" name="odiskon">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Total Bayar
+			</td>
+			<td>
+				<input type="text" name="ototal" size="10"> 
+			</td>
+		</tr>	
+		<tr>
+			<td></td>
+			<td>
+				
+				<input type="reset" value="Ulangi" >
+			</td>
+		</tr>
+</table>
+</form>
+</body>
+</html>
+    </body>
+    </html>

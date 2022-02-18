@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tes mingguan perulangan</title>
+</head>
+
+<body>
+    <form name="g">
+        <table>
+            <tr>
+                <td>Masukan Bintang :</td>
+                <td><input type="text" name="number" id="nom" /></td>
+            </tr>
+            <tr>
+                <td>Pilih Bentuk Segitiga Bintang :</td>
+                <td><input type="radio" name="jk" id="s1" />Siku-siku <br>
+                    <input type="radio" name="jk" id="s2" />Sempurna <br>
+                    <input type="radio" name="jk" id="s3" />Siku terbalik <br>
+                    <input type="radio" name="jk" id="s4" />Sempurna Terbalik
+                </td>
+            </tr>
+            <tr>
+                <td><input type="button" value="submit" class="btn" id="btn" onClick="buat()"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <pre id="s" style="font-family: calibri"></pre>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        function buat() {
+            let bintang = parseInt(g.nom.value);
+            document.getElementById("s").innerHTML = '';
+
+            if (document.getElementById('s1').checked) {
+                for (let a = 1; a <= bintang; a++) {
+                    for (let b = 1; b <= a; b++) {
+                        document.getElementById('s').innerHTML += "*";
+                    }
+                    document.getElementById("s").innerHTML += "<br>";
+                }
+            }
+            else if (document.getElementById('s2').checked) {
+                for (let a = 1; a <= bintang; a++) {
+                    for (let a1 = 1; a1 <= bintang - a; a1++) {
+                        document.getElementById('s').innerHTML += ' ';
+                    }
+                    for (let b = 1; b <= a; b++) {
+                        document.getElementById('s').innerHTML += "*";
+                    }
+                    document.getElementById("s").innerHTML += "<br>";
+                }
+            }
+            else if (document.getElementById('s3').checked) {
+                for (let a = 1; a <= bintang; a++) {
+                    for (let b = 0; b <= bintang-a; b++) {
+                        document.getElementById('s').innerHTML += "*";
+                    }
+                    document.getElementById('s').innerHTML += "<br>";
+                }
+            }
+            else if (document.getElementById('s4').checked) {
+                for (let a = 1; a <= bintang; a++) {
+                    for (let b = 0; b <= bintang-a; b++) {
+                        document.getElementById('s').innerHTML += "*";
+                    }
+                    document.getElementById('s').innerHTML += "<br>";
+                    for (let a1 = 1; a1 <= a; a1++) {
+                        document.getElementById('s').innerHTML += ' ';
+                    }
+                }
+            }
+            else{
+                alert("pilihlah salah satu opsi.")
+            }
+        }
+
+    </script>
+</body>
+
+</html>

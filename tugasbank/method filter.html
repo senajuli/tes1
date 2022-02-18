@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>method filter</title>
+</head>
+<body>
+    <h3>Project 1</h3>
+    <p>Dapatkan setiap elemen dalam array yang memiliki nilai 13 atau lebih:</p>
+    <p id="demo"></p>
+    
+    <h3>Project 2</h3>
+    <p><input type="number" id="ageToCheck" value="1"></p>
+    <button onclick="myFunction()">Test</button>
+    <p id="angka"></p>
+
+<script>
+    const ages = [32, 33, 16, 40, 1, 5, 71, 80, 21, 14, 8, 9, 10];
+    document.getElementById("demo").innerHTML = ages.filter(checkAdult);
+    function checkAdult(age) {
+    return age >= 13;
+    }
+
+    const ini = [32, 33, 12, 40, 1, 5, 71, 80, 21, 14, 8, 9, 10];
+    function checkAge(ini) {
+    return ini > document.getElementById("ageToCheck").value;
+    }
+    function myFunction() {
+    document.getElementById("angka").innerHTML = ini.filter(checkAge);
+    }
+</script>
+</body>
+</html>

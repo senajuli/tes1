@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sayHelloWorld(){
+            document.writeln("<p>Hallo Dunia..</p>");
+            document.writeln("<p>Hallo Juga</p>")
+        }
+
+        function nama(){
+            let coba = "sena julianti";
+            document.writeln('<p>Hallo' + coba + '</p>')
+        }
+
+        function bebas(){
+            let asal = 'bandung';
+            document.writeln(`asal rumah ${asal}`);
+        }
+
+        function namaLengkap(namaAwal,namaAkhir){
+            namaAkhir = 'julianti';
+            document.writeln(`Hallo ${namaAwal} ${namaAkhir}`);
+            }
+
+            function penjumlahan(angkaAwal, angkaAkhir){
+                let jumlah = angkaAwal + angkaAkhir;
+                document.writeln(`hasil penjumlahan dari ${angkaAwal} ${angkaAkhir}`);
+            }
+            penjumlahan('10','10');
+        sayHelloWorld();
+        nama();
+        bebas();
+
+        
+
+    </script>
+</body>
+</html>
